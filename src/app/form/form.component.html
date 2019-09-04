@@ -1,3 +1,7 @@
-<p>
-form works!
-</p>
+<form (ngSubmit)="salvar()" #f="ngForm">
+  <div>
+    <label>Nome</label>
+    <br>
+    <input required [(ngModel)]="aluno.nome" #nome="ngModel" name="nome">
+
+  </div>
