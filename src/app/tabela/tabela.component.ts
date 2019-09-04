@@ -7,10 +7,11 @@ import { Aluno } from '../aluno';
   styleUrls: ['./tabela.component.css']
 })
 export class TabelaComponent implements OnInit {
-  constructor(private servico: ServicoService) { }
+  constructor(private s: ServicoService) { }
   ngOnInit() { }
+  
   excluir(aluno: Aluno) {
-    this.servico.remove(aluno);
+    this.s.remove(aluno);
     return false; /* para evitar o popup menu */
   }
 }

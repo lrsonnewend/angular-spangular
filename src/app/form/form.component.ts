@@ -8,12 +8,12 @@ import { Aluno } from '../aluno';
 })
 export class FormComponent implements OnInit {
   private aluno: Aluno;
-  constructor(private servico: ServicoService) { }
+  constructor(private s: ServicoService) { }
   ngOnInit() {
     this.aluno = new Aluno(); /* cria um novo aluno */
   }
   salvar() {
-    this.servico.add(this.aluno);
+    this.s.add(this.aluno);
     this.aluno = new Aluno(); /* cria um novo aluno */
   }
 }
