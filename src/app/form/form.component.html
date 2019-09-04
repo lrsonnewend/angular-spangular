@@ -1,4 +1,29 @@
-<form (ngSubmit)="salvar()" #f="ngForm">
+<div class="container">
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()" #alunoForm="ngForm">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="aluno.nome" name="nome"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Nome é obrigatório
+        </div>
+
+        <br><br>
+        
+        <label for="sexo">Sexo</label><br>
+        <input type="radio" value="female" name="gender" [ngModel]="aluno.gender" required #gender="ngModel"> Feminino
+        
+        <input type="radio" value="male" name="gender" [ngModel]="aluno.gender" required #gender="ngModel"> Masculino
+                 
+      </div>
+      <br><br>
+            <button type="submit" class="btn btn-success" [disabled]="!alunoForm.form.valid">Submit</button>
+
+<!--<form (ngSubmit)="salvar()" #f="ngForm">
   <div>
     <label>Nome</label>
     <br>
@@ -19,4 +44,4 @@
   &nbsp;
   <button class="reset btn btn-secondary"(click)="reset()"> Limpar </button>  
 
-</form>
+</form>-->
