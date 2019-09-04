@@ -3,5 +3,20 @@
     <label>Nome</label>
     <br>
     <input required [(ngModel)]="aluno.nome" #nome="ngModel" name="nome">
-
+    <br><br>
   </div>
+
+  <div>
+    <label> Sexo</label>
+    <br>
+    <input type="radio" [(ngModel)]="aluno.sexo" value="female"> Feminino
+    &nbsp;
+    <input type="radio" [(ngModel)]="aluno.sexo" value="male"> Masculino
+    <br><br>
+  </div>
+
+  <button type="submit" class="btn btn-secondary"> Salvar </button>
+  &nbsp;
+  <button class="reset btn btn-secondary"(click)="reset()"> Limpar </button>  
+
+</form>
