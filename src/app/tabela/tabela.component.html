@@ -7,3 +7,5 @@
     </tr>
   </thead>
   <tbody>
+    <th *ngFor="let item of s.lista" (contextmenu)="excluir(item)">{{aluno.nome}} ({{aluno.sexo}})</th>
+  </tbody>
