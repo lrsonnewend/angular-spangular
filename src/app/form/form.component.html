@@ -12,7 +12,7 @@
           Nome é obrigatório
         </div>
 
-        <br><br>
+        <br>
         
         <label for="sexo">Sexo</label><br>
         <input type="radio" value="female" name="gender" [ngModel]="aluno.gender" required #gender="ngModel"> Feminino
@@ -21,7 +21,10 @@
                  
       </div>
       <br><br>
-            <button type="submit" class="btn btn-success" [disabled]="!alunoForm.form.valid">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="!alunoForm.form.valid" (click)="salvar()">Salvar</button>
+      &nbsp;
+      <button type="button" class="btn btn-secondary" (click)="ngOnInit()">Limpar</button>
+
 
 <!--<form (ngSubmit)="salvar()" #f="ngForm">
   <div>
